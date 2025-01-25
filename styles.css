@@ -1,0 +1,133 @@
+*,
+      :before,
+      :after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+/*
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: yellow;
+      }
+*/
+      .insider {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      .play-btn {
+        position: absolute;
+        appearance: none;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        background: conic-gradient(#fff, #fff);
+        cursor: pointer;
+        outline: none;
+        top:13%;
+        left:15%;
+      }
+
+      .play-btn::before {
+        content: "";
+        position: absolute;
+        width: 93%;
+        height: 93%;
+        background-color: #000;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .play-btn:checked {
+        animation: borderAnimate 700ms ease-in-out 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes borderAnimate {
+        0% {
+          transform: rotate(0);
+          background: conic-gradient(#fff, transparent 20%);
+        }
+
+        80% {
+          background: conic-gradient(#fff, transparent 90%);
+        }
+
+        100% {
+          transform: rotate(360deg);
+          background: conic-gradient(#fff, #fff);
+        }
+      }
+
+      .play-icon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 60%;
+        top: 50%;
+        background-color: #fff;
+        transform: translate(-60%, -50%) rotate(90deg);
+        clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+        transition: all 400ms ease-in-out;
+        cursor: pointer;
+      }
+
+      .play-btn:checked + .play-icon {
+        clip-path: polygon(0 100%, 0% 100%, 100% 100%);
+      }
+
+      .pause-icon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+
+      .pause-icon::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background-color: #fff;
+        left: 0;
+      }
+
+      .pause-icon::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+        right: 0;
+      }
+
+      .play-btn:checked ~ .pause-icon::before {
+        animation: reveal 300ms ease-in-out 350ms 1;
+        animation-fill-mode: forwards;
+      }
+
+      .play-btn:checked ~ .pause-icon::after {
+        animation: reveal 300ms ease-in-out 600ms 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes reveal {
+        0% {
+          width: 0;
+        }
+
+        100% {
+          width: 35%;
+        }
+      }

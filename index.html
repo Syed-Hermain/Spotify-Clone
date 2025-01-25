@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player with Infinite Scroll</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li class="brand"><img src="logo.png" alt="Spotify"> Spotify</li>
+            <li>Home</li>
+            <li>About</li> 
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songList">
+            <h1>Best of NCS - No Copyright Sounds</h1>
+            <div class="songItemContainer" id="scrollContainer"></div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div style="display: flex; align-items: center;">
+            <input type="range" name="range" id="myProgressBar" min="0" max="100">
+            <span id="progress-bar-time-update">0:00/3:49</span>
+          </div>
+
+        <div class="icons">
+            <!-- fontawesome icons-->
+             <div id="previous"><i class="fa-solid fa-3x fa-step-backward"></i></div>
+            
+            <!-- The player button -->
+            <div class="insider">
+                <label>
+                  <input type="checkbox" class="play-btn" />
+                  <div class="play-icon"></div>
+                  <div class="pause-icon"></div>
+                </label>
+              </div>
+            <!-- The player button -->
+
+            <div id="next"><i class="fa-solid fa-3x fa-step-forward"></i></div>
+        </div>
+        <div class="songInfo">
+            <img src="playing.gif" width="43px" alt="" id="gif"> <span class="songNameCurrent">Warriyo-Mortals</span>
+        </div>
+    </div>
+    
+
+
+<script src="https://kit.fontawesome.com/465edfb237.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
